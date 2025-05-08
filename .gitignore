@@ -1,0 +1,8 @@
+# Visual Studio junk
+.vs/
+*.user
+*.suo
+
+# Build artifacts
+bin/
+obj/
