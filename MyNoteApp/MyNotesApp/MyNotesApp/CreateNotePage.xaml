@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNotes.CreateNotePage"
+             BackgroundColor="#f4f4f9">
+
+    <VerticalStackLayout  Spacing="20">
+
+        <Label Text="Create a New Note"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#4B9CD3"
+               SemanticProperties.HeadingLevel="Level1"/>
+
+        <!-- Camp Titlu -->
+        <Entry x:Name="NoteTitleEntry"
+               Placeholder="Enter note title"
+               FontSize="18"
+               TextColor="#333"
+               
+               BackgroundColor="White"
+               Margin="0,10"
+               HorizontalOptions="FillAndExpand"/>
+
+        <!-- Camp Continut -->
+        <Editor x:Name="NoteContentEditor"
+                Placeholder="Enter note content"
+                FontSize="18"
+                TextColor="#333"
+               
+                BackgroundColor="White"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"/>
+
+        <!-- Buton pentru salvarea notitei -->
+        <Button Text="Save Note"
+                BackgroundColor="#4B9CD3"
+                TextColor="White"
+               
+                CornerRadius="10"
+                Clicked="OnSaveNoteClicked"
+                HorizontalOptions="Center"
+                FontSize="16"/>
+
+    </VerticalStackLayout>
+</ContentPage>
