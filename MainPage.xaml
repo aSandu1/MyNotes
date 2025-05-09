@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNotes.MainPage"
+             BackgroundColor="#f4f4f9">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="20, 50, 20, 20" Spacing="20">
+
+			<!-- Titlu -->
+			<Label Text="My Notes"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#4B9CD3"
+                   SemanticProperties.HeadingLevel="Level1"/>
+
+			<!-- Imagine de fundal -->
+			<Image Source="notebook_image.png"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit"/>
+
+			<!-- Descriere -->
+			<Label Text="Create, Edit, and Manage Your Notes Easily!"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   TextColor="#555"
+                   SemanticProperties.Description="Welcome message to users"
+                   Padding="0, 10"/>
+
+			<!-- Buton pentru crearea de notite -->
+			<Button x:Name="CreateNoteBtn"
+                    Text="Create New Note"
+                    BackgroundColor="#4B9CD3"
+                    TextColor="White"
+                    Padding="10"
+                    CornerRadius="10"
+                    Clicked="OnCreateNoteClicked"
+                    HorizontalOptions="Center"
+                    FontSize="16"/>
+
+			<!-- Lista de notite -->
+			<Button x:Name="ViewNotesBtn"
+                    Text="View My Notes"
+                    BackgroundColor="#2F6B99"
+                    TextColor="White"
+                    Padding="10"
+                    CornerRadius="10"
+                    Clicked="OnViewNotesClicked"
+                    HorizontalOptions="Center"
+                    FontSize="16"/>
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

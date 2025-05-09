@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNotes.NotesListPage"
+             BackgroundColor="#f4f4f9">
+
+    <VerticalStackLayout Padding="20, 50, 20, 20" Spacing="20">
+        <Label Text="My Notes"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#4B9CD3"
+               SemanticProperties.HeadingLevel="Level1"/>
+
+        <CollectionView x:Name="NotesCollectionView" 
+                        ItemsSource="{Binding Notes}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10"
+                           BackgroundColor="White"
+                           Margin="10"
+                           CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Titlu}" 
+                                   FontSize="20"
+                                   TextColor="#333"/>
+                            <Label Text="{Binding Continut}" 
+                                   FontSize="14"
+                                   TextColor="#777"
+                                   LineBreakMode="TailTruncation"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
