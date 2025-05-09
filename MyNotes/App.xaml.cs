@@ -1,5 +1,6 @@
 ﻿using MyNotes.Data;
 using MyNotes.Models;
+using MyNotes.Pages;
 
 namespace MyNotes
 {
@@ -23,7 +24,9 @@ namespace MyNotes
 
         public App()
         {
+
             InitializeComponent();
+           
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

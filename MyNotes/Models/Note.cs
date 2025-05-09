@@ -19,6 +19,7 @@ namespace MyNotes.Models
 
         public DateTime Data { get; set; }
 
+
         public static implicit operator Note(NoteDB v)
         {
             throw new NotImplementedException();

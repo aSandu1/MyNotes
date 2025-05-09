@@ -1,6 +1,5 @@
-﻿using MyNotes.Pages;
-
-
+﻿namespace MyNotes
+{
     public partial class AppShell : Shell
     {
         public AppShell()
