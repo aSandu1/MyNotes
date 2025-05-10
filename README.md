@@ -8,22 +8,22 @@ Documentatie MyNotesApp (Deaconu Emilia-Andreea, Corodescu Serban-Florin, Sandu 
   MyNotesApp (MauiProgram.cs) – configureaza builderul MAUI, fonturi, handleri nativi
   AppShell – defineste meniul Shell si rutele paginilor
 
-Data/
-  NoteDB.cs – wrapper SQLite, operatii CRUD, soft delete, restaurare
-  ExcelExportService.cs – exporta o nota intr-un fisier CSV si il deschide
-
-Models/
-  Note.cs – modelul de date pentru o nota: Id, Titlu, Continut, Data crearii, Data/Locatie activitate, IsFavorite, IsDeleted
-
-Pages/
-  1) MainPage – ecranul de start cu butoane catre toate notitele, favorite si sterse
-  2) CreateNotePage – fluxul de creare a unei note si setarea activitatii
-  3) NotesListPage – lista notitelor active, cu comenzi edit, delete, favorite si tap pentru detalii
-  4) NoteDetailsPage – afisarea unui singur detaliu nota
-  5) EditNotePage – editarea unei note existente (titlu, continut, data, ora, locatie)
-  6) ActivityInfoPage – setarea datei, orei si locatiei activitatii
-  7) FavoritesPage – lista notitelor favorite
-  8) DeletedNotesPage – lista notitelor sterse (soft delete), cu optiuni recover si delete definitiv
+  Data/
+    NoteDB.cs – wrapper SQLite, operatii CRUD, soft delete, restaurare
+    ExcelExportService.cs – exporta o nota intr-un fisier CSV si il deschide
+  
+  Models/
+    Note.cs – modelul de date pentru o nota: Id, Titlu, Continut, Data crearii, Data/Locatie activitate, IsFavorite, IsDeleted
+  
+  Pages/
+    1) MainPage – ecranul de start cu butoane catre toate notitele, favorite si sterse
+    2) CreateNotePage – fluxul de creare a unei note si setarea activitatii
+    3) NotesListPage – lista notitelor active, cu comenzi edit, delete, favorite si tap pentru detalii
+    4) NoteDetailsPage – afisarea unui singur detaliu nota
+    5) EditNotePage – editarea unei note existente (titlu, continut, data, ora, locatie)
+    6) ActivityInfoPage – setarea datei, orei si locatiei activitatii
+    7) FavoritesPage – lista notitelor favorite
+    8) DeletedNotesPage – lista notitelor sterse (soft delete), cu optiuni recover si delete definitiv
 
 3. Fluxuri principale
 
