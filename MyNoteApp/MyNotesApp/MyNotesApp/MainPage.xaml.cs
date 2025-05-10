@@ -1,6 +1,6 @@
 ﻿using MyNotes.Models;
 using MyNotes.Data;
-using static MyNotes.CreateNotePage;  // pentru CreateNotePage
+using static MyNotes.CreateNotePage;
 using static MyNotes.NotesListPage;
 
 namespace MyNotes
@@ -12,16 +12,24 @@ namespace MyNotes
             InitializeComponent();
         }
 
-        // Eveniment pentru butonul de creare notita
         private async void OnCreateNoteClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CreateNotePage()); // Asigură-te că ai CreateNotePage creat
+            await Navigation.PushAsync(new CreateNotePage());
         }
 
-        // Eveniment pentru butonul de vizualizare notite
         private async void OnViewNotesClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NotesListPage()); // Asigură-te că ai NotesListPage creat
+            await Navigation.PushAsync(new NotesListPage());
         }
+
+        private async void OnViewFavoritesClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(FavoritesPage));
+        }
+        private async void OnDeletedNotesClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DeletedNotesPage());
+        }
+
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNotes.FavoritesPage"
+             Title="Notite preferate"
+             BackgroundColor="#f9f9fb">
+
+    <VerticalStackLayout Padding="20, 50, 20, 20" Spacing="20">
+        <Label Text="⭐ Notite preferate ⭐"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#FFD700" />
+
+        <CollectionView x:Name="FavoritesCollectionView"
+                ItemsSource="{Binding Favorites}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" BackgroundColor="White" Margin="10" CornerRadius="10">
+                        <Label Text="{Binding Titlu}"
+                               FontSize="20"
+                               TextColor="#333" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

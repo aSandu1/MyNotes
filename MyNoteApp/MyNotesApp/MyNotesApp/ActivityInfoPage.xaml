@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNotes.ActivityInfoPage">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Alegeti data:" />
+        <DatePicker x:Name="ActivityDatePicker" />
+
+        <Label Text="Alegeti ora:" />
+        <TimePicker x:Name="ActivityTimePicker" />
+
+        <Label Text="Locatie:" />
+        <Entry x:Name="LocationEntry"
+           Placeholder="Introudceti locatia"
+           BackgroundColor="White" 
+           TextColor="Black"/>
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Salvati"
+              Clicked="OnSaveClicked"
+              BackgroundColor="#4B9CD3"
+              TextColor="White" />
+            <Button Text="Anulati"
+              Clicked="OnCancelClicked"
+              BackgroundColor="#D9534F"
+              TextColor="White" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

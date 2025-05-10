@@ -1,0 +1,49 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyNotes.NoteDetailsPage"
+    Title="Note Details"
+    BackgroundColor="#f9f9fb">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        
+        <ImageButton x:Name="FavoriteButton"
+             Source="star_outline.png"
+             BackgroundColor="Transparent"
+             HeightRequest="32"
+             WidthRequest="32"
+             HorizontalOptions="End"
+             Clicked="OnFavoriteClicked" />
+
+        <Label x:Name="TitleLabel"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#333" />
+
+        <Label x:Name="ContentLabel"
+               FontSize="16"
+               TextColor="#666" />
+
+        <Label x:Name="CreatedDateLabel"
+               FontSize="14"
+               TextColor="#999"
+               HorizontalOptions="End" />
+
+        <Label x:Name="ActivityDateLabel"
+               FontSize="14"
+               TextColor="#666"
+               IsVisible="False" />
+
+        <Label x:Name="LocationLabel"
+               FontSize="14"
+               TextColor="#666"
+               IsVisible="False" />
+
+        <ImageButton Source="export.png"
+             BackgroundColor="Transparent"
+             HeightRequest="32"
+             WidthRequest="32"
+             HorizontalOptions="End"
+             Clicked="OnExportClicked" />
+    </VerticalStackLayout>
+</ContentPage>

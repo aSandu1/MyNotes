@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SQLite;
+﻿using SQLite;
 using MyNotes.Models;
-
 namespace MyNotes.Data
 {
     public class NoteDB
@@ -39,9 +32,27 @@ namespace MyNotes.Data
                 return _database.InsertAsync(Note);
         }
 
-        public Task<int> DeleteNoteAsync(Note Note)
+        public Task<int> DeleteNoteAsync(Note note)
         {
-            return _database.DeleteAsync(Note);
+            return _database.DeleteAsync(note);
         }
+
+        public async Task<int> SoftDeleteNoteAsync(Note note)
+        {
+            note.IsDeleted = true;
+            return await _database.UpdateAsync(note);
+        }
+
+        public Task<List<Note>> GetNotesByDateAsync(DateTime date)
+            => _database.Table<Note>()
+                        .Where(n => n.Data.Date == date.Date)
+                        .OrderByDescending(n => n.Data)
+                        .ToListAsync();
+
+        public Task<List<Note>> GetFavoriteNotesAsync()
+            => _database.Table<Note>()
+                        .Where(n => n.IsFavorite)
+                        .OrderByDescending(n => n.Data)
+                        .ToListAsync();
     }
 }

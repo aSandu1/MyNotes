@@ -4,11 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MyNotes"
-    Title="MyNotesApp">
+    Title="MyNotesApp"
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <ShellContent
+        Title="All Notes"
+        ContentTemplate="{DataTemplate local:NotesListPage}"
+        Route="NotesListPage" />
+
+    <ShellContent
+           Title = "Favorites"
+           ContentTemplate = "{DataTemplate local:FavoritesPage}"
+           Route = "FavoritesPage" />
+
+    <ShellContent Title="Deleted Notes"
+              ContentTemplate="{DataTemplate local:DeletedNotesPage}"
+              Route="DeletedNotesPage" />
 </Shell>

@@ -19,6 +19,12 @@ namespace MyNotes.Models
 
         public DateTime Data { get; set; }
 
+        public bool IsFavorite { get; set; }
+        public bool IsDeleted { get; set; } = false;
+
+        public DateTime? ActivitateData { get; set; }
+        public string ActivitateLocatie { get; set; }
+
         public static implicit operator Note(NoteDB v)
         {
             throw new NotImplementedException();

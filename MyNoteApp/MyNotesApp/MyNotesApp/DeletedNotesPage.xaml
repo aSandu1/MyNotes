@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyNotes"
+             x:Class="MyNotes.DeletedNotesPage"
+             Title="Notite sterse"
+             BackgroundColor="#f9f9fb">
+
+    <VerticalStackLayout Padding="20,50,20,20" Spacing="20">
+        <Label Text="🗑 Notite sterse"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           TextColor="#FF4444" />
+
+        <CollectionView x:Name="DeletedNotesCollectionView"
+                    ItemsSource="{Binding DeletedNotes}"
+                    SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10"
+                         BackgroundColor="White"
+                         Margin="0,5"
+                         CornerRadius="12"
+                         HasShadow="True">
+                        <Grid ColumnDefinitions="*,Auto,Auto"
+                                VerticalOptions="Center">
+
+                <Label Text="{Binding Titlu}"
+                        FontSize="18"
+                        TextColor="#333"
+                        VerticalOptions="Center"
+                        Grid.Column="0" />
+
+                            <ImageButton Source="recover.png"
+                           Command="{Binding Source={RelativeSource AncestorType={x:Type local:DeletedNotesPage}}, Path=BindingContext.RecoverCommand}"
+                           CommandParameter="{Binding .}"
+                           BackgroundColor="Transparent"
+                           HeightRequest="24"
+                           WidthRequest="24"
+                           Grid.Column="1"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+
+                            <ImageButton Source="trashcan.png"
+                           Command="{Binding Source={RelativeSource AncestorType={x:Type local:DeletedNotesPage}}, Path=BindingContext.PermanentDeleteCommand}"
+                           CommandParameter="{Binding .}"
+                           BackgroundColor="Transparent"
+                           HeightRequest="24"
+                           WidthRequest="24"
+                           Margin="10,0,0,0"
+                           Grid.Column="2"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
